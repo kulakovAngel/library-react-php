@@ -1,0 +1,8 @@
+[19-Nov-2019 16:18:43 Europe/Moscow] PHP Notice:  Trying to get property of non-object in E:\openserver\OSPanel\domains\library-react\api.php on line 30
+[19-Nov-2019 16:18:52 Europe/Moscow] PHP Notice:  Trying to get property of non-object in E:\openserver\OSPanel\domains\library-react\api.php on line 30
+[19-Nov-2019 16:18:52 Europe/Moscow] PHP Notice:  Undefined offset: 2 in E:\openserver\OSPanel\domains\library-react\api.php on line 126
+[19-Nov-2019 16:18:52 Europe/Moscow] PHP Notice:  Trying to get property of non-object in E:\openserver\OSPanel\domains\library-react\api.php on line 30
+[19-Nov-2019 16:18:52 Europe/Moscow] PHP Notice:  Undefined offset: 2 in E:\openserver\OSPanel\domains\library-react\api.php on line 126
+[19-Nov-2019 16:18:52 Europe/Moscow] PHP Notice:  Trying to get property of non-object in E:\openserver\OSPanel\domains\library-react\api.php on line 30
+[19-Nov-2019 16:18:52 Europe/Moscow] PHP Notice:  Undefined offset: 2 in E:\openserver\OSPanel\domains\library-react\api.php on line 126
+[19-Nov-2019 16:19:14 Europe/Moscow] PHP Notice:  Trying to get property of non-object in E:\openserver\OSPanel\domains\library-react\api.php on line 30

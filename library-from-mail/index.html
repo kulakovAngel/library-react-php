@@ -1,0 +1,84 @@
+<style>
+  .conatainer {
+    box-shadow: 1px 1px 1px 1px;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  .container {
+    border: 1px solid;
+    display: flex;
+    align-items: center;
+  }
+  .title {
+    color: aqua;
+    border-bottom: 1px solid red;
+  }
+</style>
+<body>
+  <div class="conatainer" id="all_books">
+    <h2>All books</h2>
+    <input type="button" value="Get All Books">
+    <div></div>
+  </div>
+  <div class="conatainer" id="book_by_id">
+    <h2>Book by ID</h2>
+    <form>
+      <input type="number" placeholder="ID*" requred>
+      <input type="submit" value="Get All Books">
+    </form>
+    <div></div>
+  </div>
+  <div class="conatainer" id="post_book">
+    <h2>Post Book</h2>
+    <form>
+      <input type="text" placeholder="Title*" requred>
+      <input type="text" placeholder="Author*" requred>
+      <input type="number" placeholder="Total*" requred>
+      <input type="number" placeholder="Availible*" requred>
+      <input type="submit" value="Add Book!">
+    </form>
+  </div>
+  <script>
+    const BASE_URL = 'http://library/api';
+    const ALL_BOOKS_CONTAINER = document.getElementById('all_books');
+    const ALL_BOOKS_BTN = ALL_BOOKS_CONTAINER.getElementsByTagName('input')[0];
+    const ALL_BOOKS_RESULT = ALL_BOOKS_CONTAINER.getElementsByTagName('div')[0];
+    ALL_BOOKS_BTN.addEventListener('click', () => {
+      fetch(`${BASE_URL}/books`)
+        .then(res => res.json())
+        .then(res => {
+          return res.map((item) => (
+            renderBook(item)
+          ))
+        })
+        .then((res) => {
+          ALL_BOOKS_RESULT.append(...res);
+      });
+    });
+    
+    function renderBook({id, title, author, total, available}) {
+      const container = document.createElement('div');
+      container.classList.add('container');
+      const ELEMS = {};
+      ELEMS.id = document.createElement('span');
+      ELEMS.id.classList.add('id');
+      ELEMS.id.textContent = id;
+      ELEMS.title = document.createElement('h3');
+      ELEMS.title.classList.add('title');
+      ELEMS.title.textContent = title;
+      ELEMS.author = document.createElement('span');
+      ELEMS.author.classList.add('author');
+      ELEMS.author.textContent = author;
+      ELEMS.total = document.createElement('span');
+      ELEMS.total.classList.add('total');
+      ELEMS.total.textContent = total;
+      ELEMS.available = document.createElement('span');
+      ELEMS.available.classList.add('available');
+      ELEMS.available.textContent = available;
+      container.append(ELEMS.id, ELEMS.title);
+      return container;
+    }
+  </script>
+</body>

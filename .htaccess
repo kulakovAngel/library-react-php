@@ -1,0 +1,17 @@
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+#перенаправление на index.PHP / api.php
+#RewriteRule (.+) index.php/$1
+#RewriteRule ^index.php/api/ api.php
+
+
+#перенаправление на index.HTML / api.php
+
+RewriteRule (.+) index.html
+
+#причем если запрос начинается с /api/, то перенаправляем на api.php
+#[NC] - отменяет проверку регистра символов
+RewriteCond %{REQUEST_URI} ^/api/.+ [NC]
+RewriteRule (.+) api.php
